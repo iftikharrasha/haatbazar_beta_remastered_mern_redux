@@ -1,0 +1,232 @@
+.cards {
+    margin-top: 120px;
+	position: relative;
+	height: 600px;
+}
+
+.outlet-avatar {
+    margin: 10px;
+    max-width: 250px;
+    max-height: 250px;
+    overflow: hidden;
+    position: absolute;
+    left: 20%;
+    top: 2%;
+    z-index: 1;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.outlet-avatar img {
+	vertical-align: top;
+	max-width: 100%;
+	backface-visibility: hidden;
+}
+
+.outlet-avatar:hover > img,
+.outlet-avatar.hover > img {
+	opacity: 0.7;
+}
+
+.outlet-avatar:hover:before,
+.outlet-avatar.hover:before,
+.outlet-avatar:hover:after,
+.outlet-avatar.hover:after {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	opacity: 1;
+}
+
+.outlet-avatar:hover figcaption,
+.outlet-avatar.hover figcaption {
+	opacity: 1;
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+
+.card_in {
+    position: absolute;
+    top: 55px;
+    width: 90%;
+    // box-shadow: 6px 6px 14px 0 rgb(0 0 0 / 20%), -8px -8px 18px 0 rgb(255 255 255 / 55%);
+    border-radius: 40px;
+    padding: 5%;
+    background: linear-gradient(236.57deg, #e6b8ff 28.47%, #ccdee2 70.92%);
+}
+
+.card_top {
+	/* background-color: #FCDC3D; */
+	width: 100%;
+	height: 280px;
+	border-top-left-radius: 50px;
+	float: left;
+}
+
+.card_below {
+    background-color: #CCDEE2;
+    width: 100%;
+    float: left;
+    padding: 5% 1%;
+    border-radius: 0 0 10px 30px;
+}
+
+.card_below_left h4 {
+	padding-top: 20px;
+}
+
+.card_below_left p {
+	font-size: 10px;
+	font-weight: 200;
+	text-transform: none;
+	letter-spacing: 1px;
+}
+
+.card_below_right {
+	width: 20%;
+	float: right;
+}
+
+.reactions{
+    width: 100%;
+    overflow: hidden;
+}
+
+#icon-heart{
+    color: white;
+}
+
+.chart-1 {
+    border-radius: 10px;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    width: 50%;
+    float: left;
+}
+
+.chart-2 {
+    border-radius: 10px;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    float: right;
+    width: 50%;
+}
+
+.chart-1 .react, .chart-2 .view {
+    width: 80%;
+    background-color: transparent;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    padding: 1% 5%;
+}
+
+
+/* .chart-1 .react {
+    border: 2px solid black;
+} */
+
+.chart-2 .view {
+    padding: 2% 5%;
+}
+
+
+.chart-2 button a i {
+	color: white;
+}
+
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .outlet-avatar {
+        left: 14%;
+    }
+    
+    .card_in {
+        width: 95%;
+        border-radius: 15px;
+    }
+
+    .card_below {
+        padding: 5% 0%;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .card_in {
+        width: 95%;
+    }
+
+    .outlet-avatar {
+        left: 10%;
+    }
+}
+
+/* Medium devices(sm) (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .card_in {
+        width: 95%;
+    }
+
+    .outlet-avatar {
+        left: 10%;
+    }
+}
+
+/* Large devices(md) (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .card_in {
+        padding: 15px;
+        border-radius: 6%;
+    }
+
+    .card_below {
+        background-color: #CCDEE2;
+        width: 100%;
+        float: left;
+        padding: 5% 2%;
+        border-radius:5%;
+    }
+
+    .outlet-avatar {
+        left: 13%;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1441.98px){
+    .card_in {
+        width: 85%;
+    }
+}
+  
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1442px) {
+    
+}
+
+  
+/*
+*
+*
+*
+*
+*
+*
+*
+/****** Extra extra small devices (s6 mobiles, 320px and below) *******/
+@media (max-width: 320px) {
+	.outlet-avatar {
+        left: 1%;
+    }
+}
+
+/****** Extra extra small devices (s6 mobiles, 375px and below) *******/
+@media (min-width: 321px) and (max-width: 376px) {
+	.outlet-avatar {
+        left: 8%;
+    }
+}
