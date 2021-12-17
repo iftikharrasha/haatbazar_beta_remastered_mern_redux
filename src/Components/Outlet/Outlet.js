@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
@@ -6,14 +6,19 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { useSelector } from 'react-redux';
 import CardSlider from '../CardSlider/CardSlider';
+import { useDispatch } from 'react-redux';
+import { postViews } from '../../Redux/Slices/outletSlice';
 
 const Outlet = () => {
     const { outletKey } = useParams();
     const outletData = useSelector((state) => state.outlets.outletsList);
-
     const outletDetail = outletData.find(brand => brand._id === outletKey);
-
     const { outlet, title, img, description, owner, department, react, views, category, datetime, products } = outletDetail;
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(postViews(outletDetail));
+    }, [])
 
     //image snippet starts
     const clickedOne = bigImg => {
