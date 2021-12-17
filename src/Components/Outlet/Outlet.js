@@ -80,9 +80,9 @@ const Outlet = () => {
                                         </Button>
                                     </li>
                                     <li className="social-btn">
-                                            <Button variant="outlined" color="secondary">
-                                                <i className="fa fa-link icon-font"></i>
-                                            </Button>
+                                        <Button variant="outlined" color="secondary">
+                                            <i className="fa fa-link icon-font"></i>
+                                        </Button>
                                     </li>
                                 </ul>
 

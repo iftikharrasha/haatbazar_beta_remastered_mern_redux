@@ -13,6 +13,7 @@ import HomePage from './Pages/HomePage/HomePage';
 import AuthProvider from './Contexts/AuthProvider/AuthProvider';
 import './Sass/style.css';
 import OutletPage from './Pages/OutletPage/OutletPage';
+import OutletsPage from './Pages/OutletsPage/OutletsPage.js';
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
                         </Route>
                         <Route path="/outlet/:outletKey">
                           <OutletPage/>
+                        </Route>
+                        <Route path="/outlets">
+                          <OutletsPage/>
                         </Route>
                         {/* <PrivateRoute path="/secret-base">
                             <Dashboard/>
