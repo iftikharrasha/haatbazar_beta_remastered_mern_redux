@@ -3,6 +3,7 @@
 @import './hero';
 @import './cardslider';
 @import './card';
+@import './outlet';
 @import './footer';
 
 * {
@@ -50,6 +51,30 @@ background: $secondary;
 }
 ::-webkit-scrollbar-thumb:window-inactive {
 background: $secondary;
+}
+
+.App{
+    position:relative;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.fade-enter{
+    opacity: 0;
+}
+.fade-exit{
+    opacity: 1;
+}
+.fade-enter-active{
+    opacity: 1;
+}
+.fade-exit-active{
+    opacity: 0;
+}
+.fade-enter-active,
+.fade-exit-active{
+    transition: opacity 400ms;
 }
 
 h1,h2,h3,h4,h5,h6,p{

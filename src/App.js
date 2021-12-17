@@ -4,30 +4,49 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import Home from './Pages/Home/Home';
-import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import {
+  CSSTransition,
+  TransitionGroup,
+} from 'react-transition-group';
+import ScrollToTop from './ScrollToTop.js';
+import HomePage from './Pages/HomePage/HomePage';
+import AuthProvider from './Contexts/AuthProvider/AuthProvider';
 import './Sass/style.css';
+import OutletPage from './Pages/OutletPage/OutletPage';
 
 function App() {
   return (
     <div className="App">
         <AuthProvider>
           <Router>
-            <Route render={({location}) => (
-                <Switch location={location}>
-                    <Route path="/home">
-                        <Home/>
-                    </Route>
-                    <Route exact path="/">
-                        <Home/>
-                    </Route>
-                    {/* <PrivateRoute path="/secret-base">
-                        <Dashboard/>
-                    </PrivateRoute> */}
-                    <Route path="*">
-                    </Route>
-                </Switch>
-            )} />
+            <ScrollToTop>
+              <Route render={({location}) => (
+                <TransitionGroup>
+                  <CSSTransition
+                  key={location.key}
+                  timeout={300}
+                  classNames="fade"
+                  >
+                    <Switch location={location}>
+                        <Route path="/home">
+                            <HomePage/>
+                        </Route>
+                        <Route exact path="/">
+                            <HomePage/>
+                        </Route>
+                        <Route path="/outlet/:outletKey">
+                          <OutletPage/>
+                        </Route>
+                        {/* <PrivateRoute path="/secret-base">
+                            <Dashboard/>
+                        </PrivateRoute> */}
+                        <Route path="*">
+                        </Route>
+                    </Switch>
+                  </CSSTransition>
+                </TransitionGroup>
+              )} />
+            </ScrollToTop>
           </Router>
         </AuthProvider>
     </div>

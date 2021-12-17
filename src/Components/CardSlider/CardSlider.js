@@ -8,7 +8,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchOutlets } from '../../Redux/Slices/outletSlice';
 
 const CardSlider = (props) => {
-    const relCat = props.relatedCat;
+    const relCat = props.category;
+    const relOutlet = props.outlet;
+    console.log(relCat, relOutlet)
     // const first5 = outletData.slice(0,5);
 
     const dispatch = useDispatch();
@@ -69,18 +71,18 @@ const CardSlider = (props) => {
 
     return (
         <>
-
         <Container fluid>
             <Row>
                 <Col lg={10} className="offset-lg-1">
                     <div className="products-slick" data-nav="#slick-nav-1">
 
                         <Slider {...settings}>
-
-                                {
-                                    outlet.map(outlet => <Card outlet={outlet} key={outlet._id} category={relCat}></Card>)
-                                }
-
+                          {
+                            relCat ? 
+                            outlet.filter(outlet =>  outlet.category === relCat && outlet.outlet !== relOutlet).map(outlet => <Card outlet={outlet} key={outlet._id}></Card>)
+                            :
+                            outlet.map(outlet => <Card outlet={outlet} key={outlet._id}></Card>)
+                          }
                         </Slider>
                         
                     </div>

@@ -1,0 +1,266 @@
+.cover{
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.cover-svg{
+    width:100%; 
+    height:auto;
+}
+
+.pro-pic{
+    background-color: white;
+    border-radius: 20px;
+}
+
+.outlet-img {
+    width: 300px;
+    height: 300px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 50%;
+    border: 1px solid #e7e7e7;
+    margin: auto;
+}
+
+.outlet-img img {
+    border-radius: 50%;
+    width: 100%;
+}
+
+.mt--200-img {
+    margin-top: -200px !important;
+}
+
+.mt--200-div {
+    margin-top: -200px !important;
+}
+
+.icon-font{
+    font-size:20px;
+    padding: 12px 0;
+}
+
+.social-outlet{
+    overflow: hidden;
+}
+
+.social-outlet li {
+    float: left;
+    list-style: none;
+    padding: 0 5px;
+}
+
+.avatar{
+    overflow: hidden;
+}
+
+.avatar img {
+    float: left;
+    width: 80px;
+    height: 80px;
+}
+
+.avatar .owner {
+    margin: 20px 0 0 20px;
+    float: left;
+}
+
+
+.product__photo {
+    position: relative;
+}
+
+.photo-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+
+.photo-album {
+    padding: 0.7em 1em;
+    border-radius: 0 0 6px 6px;
+    background-color: #fff;
+}
+
+.photo-album ul {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 0;
+}
+
+.photo-album li {
+    float: left;
+    width: 80px;
+    height: 80px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+	list-style: none;
+    cursor: pointer;
+}
+
+.photo-main img, .photo-album li img{
+    width: 492px;
+    height: 556px;
+    object-fit: cover;
+}
+
+.photo-album li img{
+    width: 78px;
+    height: 78px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.photo-album li img:hover {
+    border: 1px solid #C4E7C9;
+}
+
+.brands{
+
+}
+
+.bottom-line {
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.bl-cat {
+    width: 8%;
+}
+
+.bl-cat, .bl-story {
+    border-bottom: 8px solid #00ca72;
+}
+
+.brand-snippet {
+	padding: 40px 0 0 25px;
+}
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .outlet-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .mt--200-img {
+        margin-top: -300px !important;
+    }
+
+    .mt--200-div {
+        margin-top: 0px !important;
+    }
+
+    .social-outlet {
+        overflow: hidden;
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .pt-xs-100{
+        padding-top: 100px;
+    }
+
+    .photo-container {
+        display: block;
+    }
+
+    .avatar {
+        text-align: center;
+    }
+
+    .avatar img{
+        float: none;
+    }
+
+    .avatar .owner {
+        margin: 20px 0;
+        float: none;
+        text-align: center;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .outlet-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .mt--200-img {
+        margin-top: -250px !important;
+    }
+
+    .mt--200-div {
+        margin-top: -80px !important;
+    }
+
+    .social-outlet {
+        overflow: hidden;
+        width: 60%;
+        margin: 10px auto;
+    }
+}
+
+/* Medium devices(sm) (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .outlet-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .mt--200-img {
+        margin-top: -150px !important;
+    }
+
+    .mt--200-div {
+        margin-top: -80px !important;
+    }
+}
+
+/* Large devices(md) (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .mt--200-div {
+        margin-top: -100px !important;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1441.98px){
+    .mt--200-div {
+        margin-top: -150px !important;
+    }
+}
+  
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1442px) {
+    
+}
+
+/*
+*
+*
+*
+*
+*
+*
+*
+/****** Extra extra small devices (s6 mobiles, 320px and below) *******/
+@media (max-width: 320px) {
+	.social-outlet {
+        width: 100%;
+    }
+}
+
+/****** Extra extra small devices (s6 mobiles, 375px and below) *******/
+@media (min-width: 321px) and (max-width: 376px) {
+	.social-outlet {
+        width: 85%;
+    }
+}

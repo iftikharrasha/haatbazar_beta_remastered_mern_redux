@@ -10,7 +10,7 @@ import { postReacts } from '../../Redux/Slices/outletSlice';
 
 const Card = (props) => {
     const { loggedInUser } = useAuth();
-    const {_id, outlet, title, img, react, views, key} = props.outlet;
+    const {_id, outlet, title, img, react, views} = props.outlet;
 
     const dispatch = useDispatch();
     //love react
@@ -86,7 +86,7 @@ const Card = (props) => {
             <div className="cards d-flex justify-content-center">
                        <div className="card_in">
                            <div className="card_top">
-                                <Link to={"/profile/"+key}>
+                                <Link to={"/outlet/"+_id}>
                                     <figure className="outlet-avatar">
                                         <LazyLoadImage effect="blur" src={img}/>
                                     </figure>
