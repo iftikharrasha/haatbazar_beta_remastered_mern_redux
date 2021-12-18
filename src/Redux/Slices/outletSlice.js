@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 export const fetchOutlets = createAsyncThunk(
     'outlet/fetchOutlets',
     async () => {
-      const response = await fetch('http://localhost:5000/outlets')
+      const response = await fetch('https://rocky-retreat-69417.herokuapp.com/outlets')
       .then(res => res.json())
       return response
     }
@@ -12,7 +12,7 @@ export const fetchOutlets = createAsyncThunk(
 export const postReacts = createAsyncThunk(
     'outlet/postReacts',
     async (outlet) => {
-        let url = `http://localhost:5000/reaction/${outlet._id}`;
+        let url = `https://rocky-retreat-69417.herokuapp.com/reaction/${outlet._id}`;
         const response = await fetch(url, {
             method: 'PUT',
             headers: {
@@ -38,7 +38,7 @@ export const postReacts = createAsyncThunk(
 export const postViews = createAsyncThunk(
     'outlet/postViews',
     async (outlet) => {
-        let url = `http://localhost:5000/view/${outlet._id}`;
+        let url = `https://rocky-retreat-69417.herokuapp.com/view/${outlet._id}`;
         const response = await fetch(url, {
             method: 'PUT',
             headers: {
