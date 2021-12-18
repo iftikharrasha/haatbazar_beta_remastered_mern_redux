@@ -27,7 +27,7 @@ const Card = (props) => {
             });
         }else{
             if(dispatch(postReacts(props.outlet))){
-                document.getElementById('icon-heart').style.color = 'red';
+                // document.getElementById('icon-heart').style.color = 'red';
                 toast.dismiss(loading);
                 toast.success('Thanks for the appreciation! 😃');
             }else{

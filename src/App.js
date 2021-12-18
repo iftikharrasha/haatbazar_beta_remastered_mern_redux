@@ -14,6 +14,8 @@ import AuthProvider from './Contexts/AuthProvider/AuthProvider';
 import './Sass/style.css';
 import OutletPage from './Pages/OutletPage/OutletPage';
 import OutletsPage from './Pages/OutletsPage/OutletsPage.js';
+import AboutPage from './Pages/AboutPage/AboutPage.js';
+import ContactPage from './Pages/ContactPage/ContactPage.js';
 
 function App() {
   return (
@@ -40,6 +42,12 @@ function App() {
                         </Route>
                         <Route path="/outlets">
                           <OutletsPage/>
+                        </Route>
+                        <Route path="/about">
+                          <AboutPage/>
+                        </Route>
+                        <Route path="/contact">
+                          <ContactPage/>
                         </Route>
                         {/* <PrivateRoute path="/secret-base">
                             <Dashboard/>

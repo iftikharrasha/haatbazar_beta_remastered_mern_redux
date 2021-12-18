@@ -15,12 +15,10 @@ const Outlets = () => {
     const filterItems = (category) => {
         if (category === 'All') {
             activeDrawer();
-            // setOutlets(outlets);
-          return;
+            return;
         }
         const newItems = outlets.filter((item) => item.category === category);
         activeDrawer();
-        // setOutlets(newItems);
      };
 
     const [searchTerm, setSearchTerm] = useState('');

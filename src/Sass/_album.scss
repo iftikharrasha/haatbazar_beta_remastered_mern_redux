@@ -1,0 +1,169 @@
+.album-height{
+	height: 3880px;
+}
+
+.story-height{
+    height: 3335px;
+}
+
+.alb-two img{
+	transform: rotate(350deg);
+}
+
+.alb-three img{
+	transform: rotate(13deg);
+}
+
+.alb-four img{
+	transform: rotate(350deg);
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .alb-one, .alb-two, .alb-three, .alb-four {
+        top: 150px;
+    }
+
+    .alb-one img, .alb-two img, .alb-three img, .alb-four img {
+        width: 90%;
+    }
+
+    .album-height {
+        height: 1450px;
+    }
+
+    .story-height {
+        height: 600px;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .alb-one img, .alb-two img, .alb-three img, .alb-four img {
+        width: 90%;
+    }
+
+    .album-height {
+        height: auto;
+    }
+
+    .story-height {
+        height: auto;
+    }
+
+    .sticky-el-sm {
+        position: relative;
+    }
+    
+    .sm-top-1{
+        top: 100px;
+        padding-top: 0px;
+    }
+
+    .sm-top-2{
+        top: 50px;
+        padding-top: 0px;
+    }
+
+    .sm-top-3{
+        top: 0px;
+        padding-top: 0px;
+    }
+
+    .sm-top-4{
+        top: -50px;
+        padding-top: 0px;
+    }
+}
+
+/* Medium devices(sm) (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .alb-one img, .alb-two img, .alb-three img, .alb-four img {
+        width: 90%;
+    }
+
+    .album-height {
+        height: auto;
+    }
+
+    .story-height {
+        height: auto;
+    }
+
+    .sticky-el-sm {
+        position: relative;
+    }
+    
+    .sm-top-1{
+        top: 100px;
+        padding-top: 0px;
+    }
+
+    .sm-top-2{
+        top: 50px;
+        padding-top: 0px;
+    }
+
+    .sm-top-3{
+        top: 0px;
+        padding-top: 0px;
+    }
+
+    .sm-top-4{
+        top: -50px;
+        padding-top: 0px;
+    }
+}
+
+/* Large devices(md) (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .album-height{
+        height: 2060px;
+    }
+
+    .story-height {
+        height: 1710px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1441.98px){
+    .album-height{
+        height: 2770px;
+    }
+
+    .story-height {
+        height: 2465px;
+    }
+
+    .category-card {
+        height: 450px;
+    }
+  }
+  
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1442px) {
+    
+  }
+
+  /*
+*
+*
+*
+*
+*
+*
+*
+/****** Extra extra small devices (s6 mobiles, 320px and below) *******/
+@media (max-width: 320px) {
+	.story-height {
+        height: 700px;
+    }
+}
+
+/****** Extra extra small devices (s6 mobiles, 375px and below) *******/
+@media (min-width: 321px) and (max-width: 376px) {
+	.story-height {
+        height: 650px;
+    }
+}

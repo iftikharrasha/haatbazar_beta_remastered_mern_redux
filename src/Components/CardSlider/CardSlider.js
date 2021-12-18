@@ -10,7 +10,6 @@ import { fetchOutlets } from '../../Redux/Slices/outletSlice';
 const CardSlider = (props) => {
     const relCat = props.category;
     const relOutlet = props.outlet;
-    console.log(relCat, relOutlet)
     // const first5 = outletData.slice(0,5);
 
     const dispatch = useDispatch();
