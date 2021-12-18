@@ -3,8 +3,7 @@ import { Redirect, Route } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
 const PrivateRoute = ({ children, ...rest }) => {
-	const { loggedInUser, isFetching } = useAuth();
-	console.log(isFetching);
+	const { loggedInUser } = useAuth();
 
     return (
         <Route
@@ -15,7 +14,7 @@ const PrivateRoute = ({ children, ...rest }) => {
 				) : (
 					<Redirect
 						to={{
-							pathname: '/playlist',
+							pathname: '/',
 							state: { from: location }
 						}}
 					/>

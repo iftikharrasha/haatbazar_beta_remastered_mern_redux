@@ -48,7 +48,7 @@ const Album = () => {
                                         </p> 
                                     </div>
                                     <div className="rel-el rel-pad rel-pad-4 z-down">
-                                            <h5 className="text-right med-50">We help your brands grow and be seen in 5 easy <Button variant="outline-secondary" className="btn-tag-1 light-28 px-4"><a href="#">Steps!</a></Button>
+                                            <h5 className="text-right med-50">We help your brands grow and be seen in 5 easy <a href="#"><Button className="light-28 px-4">Steps!</Button></a>
                                             </h5> 
                                     </div>
                                 </div>

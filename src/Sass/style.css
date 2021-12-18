@@ -98,10 +98,11 @@
 }
 
 .nav-links:hover {
-  color: #EF4B69 !important;
+  color: #009688 !important;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   border-radius: 4px;
+  text-decoration: none;
 }
 
 .menu-icon {
@@ -1376,6 +1377,129 @@
   border-radius: 12px;
   height: 230px;
   width: 100%;
+}
+
+.social-login button {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #c7c7c7;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 50px;
+  padding: 10px 30px;
+}
+
+.main-content {
+  position: relative;
+}
+
+.main-content .header-body {
+  width: 100%;
+  margin: 10rem 0;
+  background: #fff;
+  color: black;
+  padding: 1rem 2.5rem;
+  border-radius: 0.4375rem;
+  min-height: 56rem;
+}
+
+@media (max-width: 575.98px) {
+  .main-content .header-body {
+    padding: 1rem .5rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .main-content .header-body {
+    min-height: auto;
+    margin: 12rem 0;
+  }
+}
+
+.main-content .header-body h4 {
+  text-transform: capitalize;
+}
+
+.main-content .login-form {
+  background: var(--fc2);
+  width: 36.25rem;
+  padding: 1rem 4.0625rem;
+  border-radius: .75rem;
+}
+
+@media (max-width: 575.98px) {
+  .main-content .login-form {
+    padding: 2rem;
+  }
+}
+
+.main-content .login-form h2 {
+  color: var(--fc5);
+  font-weight: bold;
+}
+
+.main-content .login-form .form .input-field {
+  color: var(--fc5);
+  position: relative;
+}
+
+.main-content .login-form .form .input-field input, .main-content .login-form .form .input-field textarea {
+  width: 100% !important;
+  padding-left: 2.8125rem !important;
+}
+
+.main-content .login-form .form .input-field .i-envelope {
+  position: absolute;
+  padding-left: 0.9375rem;
+  top: 18px;
+}
+
+.main-content .login-form .form .input-field span .i-wrong {
+  position: absolute;
+  padding-left: 0.9375rem;
+  top: -2.8125rem;
+  right: 0.75rem;
+  color: red;
+  font-size: 1.2rem;
+}
+
+.main-content .login-form .form .input-field span .i-right {
+  position: absolute;
+  padding-left: 0.9375rem;
+  top: -2.8125rem;
+  right: 0.75rem;
+  color: green;
+  font-size: 1.2rem;
+}
+
+.main-content .login-form .form .input-field .i-key {
+  position: absolute;
+  padding-left: 0.9375rem;
+  top: 1.4375rem;
+}
+
+.main-content .login-form .form .input-field .i-user {
+  position: absolute;
+  padding-left: 0.9375rem;
+  top: 1.4375rem;
+}
+
+.main-content .login-form .form .signin-btn {
+  width: 100%;
+  border-width: 1px solid;
+  border-radius: 0.25rem;
+  padding: 0.75rem 2rem;
+  color: var(--fc3);
+  background-color: var(--fc5);
+}
+
+.main-content .login-form .form .below {
+  color: var(--fc5) !important;
+}
+
+.main-content .login-form .form .below a {
+  font-weight: 700;
+  color: var(--fc5) !important;
 }
 
 .footer .copyright {

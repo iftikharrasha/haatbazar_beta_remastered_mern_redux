@@ -16,6 +16,8 @@ import OutletPage from './Pages/OutletPage/OutletPage';
 import OutletsPage from './Pages/OutletsPage/OutletsPage.js';
 import AboutPage from './Pages/AboutPage/AboutPage.js';
 import ContactPage from './Pages/ContactPage/ContactPage.js';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute.js';
+import ProfilePage from './Pages/ProfilePage/ProfilePage.js';
 
 function App() {
   return (
@@ -49,9 +51,9 @@ function App() {
                         <Route path="/contact">
                           <ContactPage/>
                         </Route>
-                        {/* <PrivateRoute path="/secret-base">
-                            <Dashboard/>
-                        </PrivateRoute> */}
+                        <PrivateRoute path="/profile">
+                            <ProfilePage/>
+                        </PrivateRoute>
                         <Route path="*">
                         </Route>
                     </Switch>

@@ -70,7 +70,7 @@ const Contact = () => {
                                                         </Col>
                                                         <Col lg={12}>
                                                             <div className="text-center">
-                                                                <Button variant="outlined" color="secondary" className="px-4" onClick={() => setContactModalShow(true)}>
+                                                                <Button className="px-4" onClick={() => setContactModalShow(true)}>
                                                                     Submit
                                                                 </Button>
 

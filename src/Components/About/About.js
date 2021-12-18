@@ -143,7 +143,7 @@ const About = (props) => {
                                                             <img className="img-fluid" src={rasha} alt="rasha"/>
                                                         </div>
                                                         <div className="member-info mt-lg-5 mt-sm-3">
-                                                            <span className="medi-20 pl-5">Iftikhar Rasha</span>
+                                                            <span className="medi-20 pl-5">John Doe</span>
                                                             <ul className="list-unstyled pl-5">
                                                                 <li className="mt-2">
                                                                     <ul className="list-inline social-icons">
@@ -166,7 +166,7 @@ const About = (props) => {
                                                                 <img className="img-fluid" src={arif} alt="rasha"/>
                                                             </div>
                                                             <div className="member-info mt-lg-5 mt-3">
-                                                                <span className="medi-20 pl-5">Arif Jawad</span>
+                                                                <span className="medi-20 pl-5">Jason Mamoa</span>
                                                                 <ul className="list-unstyled pl-5">
                                                                     <li className="mt-2">
                                                                         <ul className="list-inline social-icons">
@@ -189,7 +189,7 @@ const About = (props) => {
                                                                 <img className="img-fluid" src={diti} alt="rasha"/>
                                                             </div>
                                                             <div className="member-info mt-lg-5 mt-sm-3">
-                                                                    <span className="medi-20 pl-5">Roksana Diti</span>
+                                                                    <span className="medi-20 pl-5">Skyler White</span>
                                                                     <ul className="list-unstyled pl-5">
                                                                         <li className="mt-2">
                                                                             <ul className="list-inline social-icons">
