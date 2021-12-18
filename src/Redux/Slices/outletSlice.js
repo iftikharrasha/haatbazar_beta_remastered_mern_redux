@@ -64,7 +64,7 @@ export const postViews = createAsyncThunk(
 export const postCreate = createAsyncThunk(
     'outlet/postCreate',
     async (outlet) => {
-        let url = 'http://localhost:5000/add-outlet';
+        let url = 'https://rocky-retreat-69417.herokuapp.com/add-outlet';
         const response = await fetch(url, {
             method: 'POST',
             headers: {
