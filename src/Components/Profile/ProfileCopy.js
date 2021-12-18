@@ -1,21 +1,49 @@
-import React, { useState, useEffect } from 'react';
-import { Button } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
-import { postCreate } from '../../Redux/Slices/outletSlice';
+import React, { useRef } from 'react';
+import useAuth from '../../Hooks/useAuth';
 
 const Profile = () => {
-    const [postData, setPostData] = useState({ outlet: '', title: '', owner: '', category: '', description: '', selectedFile: '' }); 
+    const {loggedInUser} = useAuth();
 
-    const dispatch = useDispatch();
+    const addedBy = loggedInUser.name;
+    const date = new Date().toISOString().slice(0, 10);
+    const titleRef = useRef();
+    const catRef = useRef();
+    const thumbRef = useRef();
+    const imgRef = useRef();
+    const descRef = useRef();
+    const priceRef = useRef();
+    const courtesyRef = useRef();
+    const linkRef = useRef();
+
     const handleAddOutlet = e => {
-        dispatch(postCreate(postData));
+        const title = titleRef.current.value;
+        const category = catRef.current.value;
+        const thumb = thumbRef.current.value;
+        const img = imgRef.current.value;
+        const desc = descRef.current.value;
+        const price = priceRef.current.value;
+        const courtesy = courtesyRef.current.value;
+        const link = linkRef.current.value;
+
+        const newOutlet = {date, title, category, img, desc, price, addedBy, thumb, courtesy, link};
+        fetch('https://thawing-inlet-67169.herokuapp.com/add-outlet', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newOutlet)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            if(data.insertedId){
+                document.getElementById('success').style.display = 'block';
+                e.target.reset();
+            }else{
+                document.getElementById('error').style.display = 'block';
+            }
+        })
         e.preventDefault();
     }
-
-    const clear = () => {
-        setPostData({ outlet: '', title: '', owner: '', category: '', description: '', selectedFile: '' });
-    };
-
     return (
         <>
         <div className="main-content">
@@ -33,46 +61,39 @@ const Profile = () => {
                                     </div>
                                     <div className="d-flex align-items-center justify-content-center">
                                         <div className="login-form bg-tag-1">
-                                            <form className="form" onSubmit={handleAddOutlet} autoComplete="off">
+                                            <form className="form" onSubmit={handleAddOutlet}>
                                                 <div className="inputs my-4">
                                                     <div className="input-field">
-                                                        <input className="px-4 py-3 mb-2 text-black border border-transparent rounded lit--14" type="text" value={postData.outlet} onChange={(e) => setPostData({ ...postData, outlet: e.target.value })} name="name" placeholder="Enter Outlet Name"/>
+                                                        <input className="px-4 py-3 mb-2 text-black border border-transparent rounded lit--14" type="text" ref={titleRef} name="title" placeholder="Enter Outlet Title" autoComplete="on" required/>
                                                         <div className="input-icon">
                                                             <i className="fa fa-pencil-square-o i-envelope" aria-hidden="true"></i>
                                                         </div>
                                                     </div>
                                                     <div className="input-field my-3">
-                                                        <input type="text" className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit--14" value={postData.category} onChange={(e) => setPostData({ ...postData, category: e.target.value })} name="category" placeholder="Enter Category: food, clothing etc." autoComplete="on"/>
+                                                        <input type="text" ref={catRef} className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit--14" name="cat" placeholder="Enter Category: popular, extensions etc." autoComplete="on" required/>
                                                         <div className="input-icon">
                                                             <i className="fa fa-pencil-square-o i-key" aria-hidden="true"></i>
                                                         </div>
                                                     </div>
                                                     <div className="input-field my-3">
-                                                        <input type="text" className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit--14" value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} name="title" placeholder="Enter Fancy Title" autoComplete="on"/>
+                                                        <input type="text" ref={thumbRef} className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit--14" name="img" placeholder="Enter Thumbnail Link" autoComplete="on" required/>
                                                         <div className="input-icon">
                                                             <i className="fa fa-pencil-square-o i-key" aria-hidden="true"></i>
                                                         </div>
                                                     </div>
                                                     <div className="input-field my-3">
-                                                        <input type="text" className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit--14" name="owner" value={postData.owner} onChange={(e) => setPostData({ ...postData, owner: e.target.value })}  placeholder="Enter Owner Name" autoComplete="on"/>
-                                                        <div className="input-icon">
-                                                            <i className="fa fa-pencil-square-o i-key" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                    <span className="lit--14">Enter Outlet Image:</span>
-                                                    <div className="input-field mb-3">
-                                                        <input type="file" className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit--14" name="image" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} placeholder="Enter The Outlet Image"/>
+                                                        <input type="text" ref={imgRef} className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit--14" name="img" placeholder="Enter Image Link" autoComplete="on" required/>
                                                         <div className="input-icon">
                                                             <i className="fa fa-pencil-square-o i-key" aria-hidden="true"></i>
                                                         </div>
                                                     </div>
                                                     <div className="input-field my-3">
-                                                        <textarea rows="4" cols="40" className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit--14" name="desc"  value={postData.description} onChange={(e) => setPostData({ ...postData, description: e.target.value })} placeholder="Enter Outlet Description" autoComplete="on"></textarea>
+                                                        <input type="text" ref={priceRef} className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit--14" name="price" placeholder="Enter Offer Starting Price" autoComplete="on" required/>
                                                         <div className="input-icon">
                                                             <i className="fa fa-pencil-square-o i-key" aria-hidden="true"></i>
                                                         </div>
                                                     </div>
-                                                    {/* <div className="input-field my-3">
+                                                    <div className="input-field my-3">
                                                         <input type="text" ref={courtesyRef} className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit--14" name="price" placeholder="Post Courtesy(optional)" autoComplete="on"/>
                                                         <div className="input-icon">
                                                             <i className="fa fa-pencil-square-o i-key" aria-hidden="true"></i>
@@ -84,11 +105,15 @@ const Profile = () => {
                                                             <i className="fa fa-pencil-square-o i-key" aria-hidden="true"></i>
                                                         </div>
                                                     </div>
-                                                    */}
+                                                    <div className="input-field my-3">
+                                                        <textarea rows="4" cols="40" ref={descRef} className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit--14" name="desc" placeholder="Enter Outlet Description" autoComplete="on" required></textarea>
+                                                        <div className="input-icon">
+                                                            <i className="fa fa-pencil-square-o i-key" aria-hidden="true"></i>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div className="d-flex align-items-center justify-content-center">
-                                                    <Button type="submit" className="signin-btn">Submit</Button>
-                                                    <Button type="submit" className="signin-btn" onClick={clear}>Reset</Button>
+                                                    <button className="signin-btn">Submit</button>
                                                 </div>
                                             </form>
                                         </div>

@@ -61,6 +61,32 @@ export const postViews = createAsyncThunk(
     }
 )
 
+export const postCreate = createAsyncThunk(
+    'outlet/postCreate',
+    async (outlet) => {
+        let url = 'http://localhost:5000/add-outlet';
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(outlet)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.insertedId){
+                return outlet
+            }else{
+                console.log('No response!');
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+        return response
+    }
+)
+
 const outletSlice = createSlice({
     name: 'outlet',
     initialState: {
@@ -90,6 +116,11 @@ const outletSlice = createSlice({
 
         builder.addCase(postViews.fulfilled, (state, action) => {
             state.outletsList = state.outletsList.map(outlet => outlet._id === action.payload._id ? {...outlet, views: outlet.views + 1 } : outlet);
+            state.status = 'success';
+        })
+
+        builder.addCase(postCreate.fulfilled, (state, action) => {
+            state.outletsList = [...state.outletsList, action.payload];
             state.status = 'success';
         })
 
